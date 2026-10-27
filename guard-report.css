@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Anuphan', sans-serif;
+    font-size: 15px;
+    background-color: #525659;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page {
+    width: 297mm;
+    height: 210mm;
+    background: white;
+    margin-bottom: 20px;
+    padding: 15mm;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px; 
+    margin-bottom: 5px;
+}
+
+.date-display {
+    text-align: center;
+    font-weight: bold; 
+    font-size: 18px; 
+    margin-bottom: 10px;
+}
+
+table th, 
+table td, 
+td[contenteditable="true"] {
+    font-size: 16px !important; 
+    line-height: 1 !important; 
+}
+
+.autocomplete-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px; 
+    font-family: inherit;
+    border-bottom: 1px solid #eee;
+    color: #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 4px 8px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+th {
+    text-align: center;
+    font-weight: bold;
+    background-color: #e8f0e9; 
+}
+
+.bg-gray {
+    background-color: #d9d9d9 !important;
+    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact;
+}
+
+.toolbar {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 297mm;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 10px; 
+    z-index: 1000;
+    border-top: 4px solid #315d38; 
+}
+
+.toolbar label {
+    font-weight: bold;
+    color: #315d38;
+    font-size: 15px; 
+}
+
+.toolbar input[type="date"], .toolbar select {
+    padding: 6px 10px;
+    font-family: inherit;
+    font-size: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-print {
+    background-color: #315d38; 
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 15px; 
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-print:hover {
+    background-color: #24472a;
+}
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 0;
+    }
+    html, body {
+        width: 297mm !important;
+        height: 210mm !important;
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .page {
+        width: 297mm !important;
+        height: 210mm !important;
+        padding: 15mm !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    .no-print, .autocomplete-dropdown {
+        display: none !important;
+    }
+    th {
+        background-color: #e8f0e9 !important;
+    }
+}
+
+td[contenteditable="true"] {
+    font-family: inherit;
+    font-size: inherit;
+    color: #000 !important;
+    outline: none; 
+}
+
+td[contenteditable="true"]:focus {
+    background-color: #e8f0e9; 
+}
+
+.autocomplete-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.autocomplete-item:hover {
+    background-color: #e8f0e9; 
+}

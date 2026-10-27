@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานลงเวลา รปภ.</title>
+    <link rel="stylesheet" href="guard-report.css">
+</head>
+<body>
+
+    <!-- แถบเครื่องมือ (ซ่อนตอนสั่งพิมพ์) -->
+    <div class="toolbar no-print">
+        <label for="reportDate">📅 เลือกวันที่:</label>
+        <input type="date" id="reportDate">
+        
+        <label for="reportUnit">🏢 หน่วยงาน:</label>
+        <select id="reportUnit" style="padding: 6px 10px; font-family: inherit; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
+            <option value="ทั้งหมด">ทั้งหมด (รวมทุกหน่วยงาน)</option>
+            <option value="ส่วนกลาง">ส่วนกลาง</option>
+            <option value="ศูนย์การเรียนรู้มหิดล">ศูนย์การเรียนรู้มหิดล</option>
+            <option value="มหิดลสิทธาคาร">มหิดลสิทธาคาร</option>
+            <option value="ลานจอดมหิดลสิทธาคาร">ลานจอดมหิดลสิทธาคาร</option>
+            <option value="อาคารสิริวิทยา">อาคารสิริวิทยา</option>
+            <option value="โครงการจัดตั้งสถาบันอุทยานธรรมชาติวิทยาสิรีรุกขชาติ">สิรีรุกขชาติ</option>
+            <option value="หอพักนักศึกษา">หอพักนักศึกษา</option>
+        </select>
+
+        <button class="btn-print" onclick="window.print()">🖨️ สั่งพิมพ์ / บันทึก PDF</button>
+    </div>
+    
+    <div id="pages-container"></div>
+
+    <script src="guard-report.js"></script>
+</body>
+</html>
